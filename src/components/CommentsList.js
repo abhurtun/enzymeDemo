@@ -23,9 +23,16 @@ class CommentList extends Component {
     return (
       <div className="comments-list">
         {commentsNode}
-        <button onClick={this.props.onButtonClick}>A button</button>
+        <button onClick={() => this.reverse(this.state.comments[0])}>A button</button>
       </div>
     )
+  }
+
+  reverse(word){
+    var reversedWord = word.split('').reverse().join('');
+    this.setState({
+      comments:[reversedWord]
+    });
   }
 }
 
